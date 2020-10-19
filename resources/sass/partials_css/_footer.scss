@@ -1,0 +1,47 @@
+footer{
+    background-image: url("http://localhost:8000/../img/footer-montagne.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left bottom;
+    height: 600px;
+    a{
+    color:rgb(141,149,162);
+    }
+}
+.footer-left{
+    max-width: calc(100% / 2);
+    font-size: 9px;
+    color:rgb(141,149,162);
+    img{
+        width: 200px;
+        height: 150px;
+    }
+    p{
+    max-width: calc(100% / 2);
+    line-height: 15px;
+    }
+}
+.footer-right{
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(100% / 2);
+    ul{
+        padding: 0 20px;
+    }
+    li{
+        h4{
+            color:rgb(139,148,161);
+        font-size: 15px;
+        cursor: default;
+        }
+        color:rgb(141,149,162);
+        list-style: none;
+        font-size: 10px;
+        line-height: 20px;
+        cursor: pointer;
+    }
+}
+.flex{
+    display: flex;
+}

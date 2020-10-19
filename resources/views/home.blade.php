@@ -121,7 +121,23 @@ $data = '[
     "descrizione": "Altro elemento cult della famiglia de lo Spaghetto Quadrato (N.1 Spaghetto Quadrato. Una new entry che sarà molto apprezzata sia dai consumatori che dagli chef, perché il Ditale Quadrato è un formato deliziosamente piccolo ma sostanzioso.<br>A dispetto del nome che fa pensare ad una pastina è un formato di pasta assolutamente versatile, adatto a moltissime ricette di primi piatti.<br>La sua consistenza soda si sprigiona in bocca con un\'esplosione di emozioni, grazie agli spessori corposi, al colore elegantemente ambrato, alla texture delicatamente ruvida, cangiante e piacevolissima al tatto che trattiene il condimento sulla superficie.<br>Il Ditale Quadrato sembra ideale per preparazioni strutturate come la ricetta con crema di broccoletto siciliano, calamari e pomodori semi secchi profumata al limone e carbone d\'olive nere."
   }
   ]';
+
+ //Codifico il file json
  $data = json_decode($data, true);
+ //Creo tre array vuoti distinguendoli per "tipo"
+ $lunga = [];
+ $corta = [];
+ $cortissima = [];
+ //Pusho , in base al tipo di basta,  il singolo array all'interno degli array vuoti creati prima
+ foreach ($data as $pasta){
+     if ($pasta["tipo"] == "lunga"){
+        $lunga[] = $pasta;
+     } elseif ($pasta["tipo"] == "corta"){
+        $corta[] = $pasta;
+     } elseif ($pasta["tipo"] == "cortissima"){
+        $cortissima[] = $pasta;
+     }
+ }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -130,12 +146,98 @@ $data = '[
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Molisana</title>
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
- <?php foreach ($data as $pasta){ ?>
- <img src="<?php echo $pasta["src"]; ?>" alt="">
-  <p><?php echo $pasta["peso"]; ?></p>
-<?php  }?>
-    
+<!-- HEADER -->
+  <header>
+     <img src="../img/logo.png" alt="logo">
+  </header>
+<!-- /HEADER -->
+
+<!-- NAVBAR -->
+  <nav>
+      <ul class="nav_list">
+        <li>Home</li>
+        <li>Prodotti</li>
+        <li>News</li>
+      </ul>
+  </nav>
+<!-- /NAVBAR -->
+
+<!-- MAIN -->
+  <main>
+    <div class="container">
+      <!-- Stampo , con un ciclo foreach, gli array divisi per tipo (Lunga) -->
+      <h2>LE LUNGHE</h2>
+      <?php foreach ($lunga as $pasta){ ?>
+        <img src="<?php echo $pasta["src"]; ?>" alt="pasta_img">
+      <?php  }?>
+      <!-- Stampo , con un ciclo foreach, gli array divisi per tipo (Corta) -->
+      <h2>LE CORTE</h2>
+      <?php foreach ($corta as $pasta){ ?>
+        <img src="<?php echo $pasta["src"]; ?>" alt="pasta_img">
+      <?php  }?>
+      <!-- Stampo , con un ciclo foreach, gli array divisi per tipo (Cortissima) -->
+      <h2>LE CORTISSIME</h2>
+      <?php foreach ($cortissima as $pasta){ ?>
+        <img src="<?php echo $pasta["src"]; ?>" alt="pasta_img">
+      <?php  }?>
+    </div>
+  </main>
+<!-- /MAIN -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="container flex">
+    <div class="footer-left">
+      <img src="../img/logo.png" alt="logo">
+      <p>
+        <strong>RAGIONE SOCIALE:</strong> LA MOLISANA S.P.A. <br>
+        <strong>SEDE LEGALE:</strong> CONTRADA COLLE DELLE API, 100/A - 86100 - CAMPOBASSO (CB) <br>
+        <strong>PEC:</strong> LAMOLISANA@PEC.IT <br>
+        <strong>TEL:</strong> +39 0874 4981 <br>
+        <strong>FAX:</strong> +39 0874 629584 <br>
+        PER SEGNALAZIONI SCRIVERE A:
+        <a href="#"><strong>INFO@LAMOLISANA.IT</strong></a> <br>
+        PER CONTATTARE L'AREA COMMERCIALE:
+        <a href="#"><strong>COMMERCIALE@LAMOLISANA.IT</strong></a> <br>
+        PER CONTATTARE L'AREA EXPORT:
+        <a href="#"><strong>EXPORT@LAMOLISANA.IT</strong></a> <br>
+        DATI AZIENDALI: LEGGI DI PIÙ
+      </p>
+    </div>
+
+    <div class="footer-right">
+      <ul>
+        <li><h4>PASTIFICIO</h4></li>
+        <li>Il Pastificio</li>
+        <li>Grano decorticato a pietra</li>
+        <li>Filiera Integrata</li>
+        <li>100 anni di pasta</li>
+        <li>Sartoria della pasta</li>
+        <li>Spaghetto Quadrato</li>
+      </ul>
+      <ul>
+        <li><h4>COLLEZIONE DA CHEF</h4></li>
+        <li>Collezione da Chef</li>
+        <li>Grandi Cucine</li>
+        <li>Biologiche</li>
+        <li>Quadrate</li>
+      </ul>
+      <ul>
+        <li><h4>PRODOTTI</h4></li>
+        <li>Le Classiche</li>
+        <li>Le Integrali</li>
+        <li>Le Speciali</li>
+        <li>Le Biologiche</li>
+        <li>Le Gluten-Free</li>
+        <li>Le Semolee</li>
+        <li>Le Extra di Lusso</li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<!-- /FOOTER -->
 </body>
 </html>

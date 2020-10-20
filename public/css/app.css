@@ -20,12 +20,18 @@ h2 {
   padding: 10px 0;
 }
 
-.container img {
-  width: 350px;
-  height: 220px;
+.main_img {
+  width: 300px;
+  height: 200px;
   margin-right: 5px;
   margin-bottom: 5px;
   cursor: pointer;
+  display: inline-block;
+}
+
+.main_img img {
+  width: 300px;
+  height: 200px;
 }
 
 .container {
@@ -37,8 +43,24 @@ h1 {
   margin-bottom: 100px;
 }
 
-header {
-  height: 100px;
+.main_img:hover {
+  background-color: #4a6680;
+}
+
+.main_img:hover img {
+  transition: 0.8s;
+  opacity: 0.3;
+  transform: scale(1.1);
+}
+
+.info_pasta {
+  width: 300px;
+  height: 200px;
+}
+
+.info_pasta img {
+  width: 20px;
+  height: 20px;
 }
 
 header {

@@ -6,12 +6,13 @@ $data = config("pasta");
  $cortissima = [];
  //Pusho , in base al tipo di basta,  il singolo array all'interno degli array vuoti creati prima
  foreach ($data as $key => $pasta){
+    $pasta["id"] = $key;
      if ($pasta["tipo"] == "lunga"){
-        $lunga[$key] = $pasta;
+        $lunga[] = $pasta;
      } elseif ($pasta["tipo"] == "corta"){
-        $corta[$key] = $pasta;
+        $corta[] = $pasta;
      } elseif ($pasta["tipo"] == "cortissima"){
-        $cortissima[$key] = $pasta;
+        $cortissima[] = $pasta;
      }
  }
 @endphp
@@ -27,27 +28,51 @@ $data = config("pasta");
   <div class="container">
     <!-- Stampo , con un ciclo foreach, gli array divisi per tipo (Lunga) -->
     <h2>LE LUNGHE</h2>
-    <?php foreach ($lunga as $pasta){ ?>
+    @foreach ($lunga as $pasta)
       <div class="main_img">
-       <img src="<?php echo $pasta["src"]; ?>" alt="pasta_img">
+        <div class="info_pasta">
+          <a href="#">
+            {{$pasta["titolo"]}}
+          </a>
+          <a href="#">
+           <img src="../img/icon.svg" alt="icona">
+          </a>
+         </div>
+       <img src="{{$pasta["src"]}}" alt="pasta_img">
       </div>
-    <?php  }?>
+    @endforeach
 
     <!-- Stampo , con un ciclo foreach, gli array divisi per tipo (Corta) -->
     <h2>LE CORTE</h2>
-    <?php foreach ($corta as $pasta){ ?>
+    @foreach ($corta as $pasta)
       <div class="main_img">
-        <img src="<?php echo $pasta["src"]; ?>" alt="pasta_img">
+        <div class="info_pasta">
+          <a href="#">
+            {{$pasta["titolo"]}}
+          </a>
+          <a href="#">
+           <img src="../img/icon.svg" alt="icona">
+          </a>
+         </div>
+       <img src="{{$pasta["src"]}}" alt="pasta_img">
       </div>
-    <?php  }?>
+    @endforeach
 
     <!-- Stampo , con un ciclo foreach, gli array divisi per tipo (Cortissima) -->
     <h2>LE CORTISSIME</h2>
-    <?php foreach ($cortissima as $pasta){ ?>
+    @foreach ($cortissima as $pasta)
       <div class="main_img">
-        <img src="<?php echo $pasta["src"]; ?>" alt="pasta_img">
+        <div class="info_pasta">
+          <a href="#">
+            {{$pasta["titolo"]}}
+          </a>
+          <a href="#">
+           <img src="../img/icon.svg" alt="icona">
+          </a>
+         </div>
+       <img src="{{$pasta["src"]}}" alt="pasta_img">
       </div>
-    <?php  }?>
+    @endforeach
   </div>
  <!-- /MAIN -->
 @endsection

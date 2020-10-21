@@ -6,7 +6,7 @@
  <nav>
      <ul class="nav_list">
        <a href="{{route("home")}}"><li>Home</li></a>
-     <a href="{{route("prodotti")}}"><li>Prodotti</li></a>
+       <a href="{{route("prodotti")}}"><li>Prodotti</li></a>
        <a href="{{route("notizie")}}"><li>News</li></a>
      </ul>
  </nav>

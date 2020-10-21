@@ -12,9 +12,7 @@
     @include("partials_code/header")
     
     <!-- MAIN -->
-    <main>
      @yield('main')
-    </main>
     <!-- /MAIN -->
     
     @include("partials_code/footer")

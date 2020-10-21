@@ -18,8 +18,31 @@ Route::get('/', function () {
 })->name("home");
 
 Route::get('/products', function () {
-    return view('partials_page/products');
+   $data = config("pasta");
+
+   $lunga = [];
+   $corta = [];
+   $cortissima = [];
+   foreach ($data as $key => $pasta){
+       if ($pasta["tipo"] == "lunga"){
+          $lunga[$key] = $pasta;
+       } elseif ($pasta["tipo"] == "corta"){
+          $corta[$key] = $pasta;
+       } elseif ($pasta["tipo"] == "cortissima"){
+          $cortissima[$key] = $pasta;
+       }
+   }
+   $data_2 = ["lunga"=>$lunga, "corta"=>$corta,"cortissima"=> $cortissima];
+   return view('partials_page/products', $data_2);
 })->name("prodotti");
+
+Route::get('/products/show/0', function () {
+   return view('partials_page/prodotto1');
+})->name("pagina1");
+
+Route::get('/products/show/0', function () {
+   return view('partials_page/prodotto1');
+})->name("pagina2");
 
 Route::get('/news', function () {
     return view('partials_page/news');

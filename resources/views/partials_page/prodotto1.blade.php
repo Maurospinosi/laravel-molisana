@@ -1,12 +1,12 @@
-
-
 @extends('layout.layout')
 @section('title')
- La Molisana(notizie)   
+ La Molisana(Prodotti)   
 @endsection
 
 @section('main')
  <!-- MAIN -->
- <h1>Notizie</h1>
+ <div class="container_2">
+     
+ </div>
  <!-- /MAIN -->
 @endsection

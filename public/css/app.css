@@ -43,10 +43,6 @@ h2 {
   margin: auto;
 }
 
-h1 {
-  margin-bottom: 100px;
-}
-
 .main_img:hover {
   background-color: #4a6680;
 }
@@ -175,5 +171,35 @@ footer a {
 
 .flex {
   display: flex;
+}
+
+.container_2 {
+  background-color: #b7dae5;
+  height: content;
+}
+
+.pruducts_main {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.pruducts_main h2 {
+  text-align: center;
+}
+
+.pruducts_main img {
+  width: 100%;
+}
+
+.pruducts_main p {
+  color: #0a3679;
+}
+
+.first-foto {
+  height: 600px;
+}
+
+.first-foto {
+  height: 600px;
 }
 

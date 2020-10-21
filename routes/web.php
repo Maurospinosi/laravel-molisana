@@ -36,13 +36,12 @@ Route::get('/products', function () {
    return view('partials_page/products', $data_2);
 })->name("prodotti");
 
-Route::get('/products/show/0', function () {
-   return view('partials_page/prodotto1');
-})->name("pagina1");
+Route::get('/products/show/{id}', function ($id) {
+   $prodotto = config("pasta.$id");
 
-Route::get('/products/show/0', function () {
-   return view('partials_page/prodotto1');
-})->name("pagina2");
+   return view('partials_page/pag-prodotti', ["data" =>$prodotto]);
+})->name("pagine_prodotti");
+
 
 Route::get('/news', function () {
     return view('partials_page/news');

@@ -51,7 +51,7 @@ h1 {
   background-color: #4a6680;
 }
 
-.main_img:hover img {
+.main_img:hover .pasta_type {
   opacity: 0.3;
   transform: scale(1.3);
 }
@@ -76,8 +76,8 @@ h1 {
 
 .info_pasta img {
   position: absolute;
-  top: 110%;
-  left: 40%;
+  top: 150%;
+  left: 50%;
   transform: translate(-50%, -50%);
   width: 25px;
   height: 25px;
